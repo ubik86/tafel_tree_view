@@ -1,0 +1,34 @@
+TafelTreeView
+=============
+This plugin can be used to show ajax tree with various data.
+TafelTreeView work with acts_as_tree, TafelTree JS and Prototype. 
+You must have acts_as_tree plugin in vendor/plugins, and call acts_as_tree in model
+
+This is beta version. Please check and let me know if something doesn't work ;)
+
+
+Example
+=======
+  
+  foo.tafel_tree_build {|node| "#{node.id}: #{node.description} = #{node.value}"}      # foo must be ActiveRecord object, with parent_id column
+  tafel_tree_display(tree_data,'somediv', options = {})
+
+# Model
+    acts_as_tree    # require acts_as_tree !
+    acts_as_tafel_tree
+
+# View   
+    <%= tafel_tree_include %>   # include js and css in view
+    <% = tafel_tree_display(tree, div ,options = {}) %>   # display treeview
+
+
+TafelTree documentation : 
+  http://tafel.developpez.com/site/lang/en/index.php
+
+
+Contact
+=======
+
+Any bugs, questions, comments please feel free to email me : boguslaw.tarnowski@gmail.com
+
+Copyright (c) 2010,  Boguslaw Tarnowski, released under the MIT license
